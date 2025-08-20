@@ -1,6 +1,17 @@
-import streamlit as st
+import tkinter as tk
+from PIL import Image, ImageTk
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+root = tk.Tk()
+root.title("내 남자들 소개")
+
+# 이미지 불러오기
+pil_img = Image.open("my_guys.jpg")
+tk_img = ImageTk.PhotoImage(pil_img)
+
+label_img = tk.Label(root, image=tk_img)
+label_img.pack()
+
+label_text = tk.Label(root, text="이쪽은 내 절친 A, 그리고 여기는 B!", font=("Arial", 14))
+label_text.pack()
+
+root.mainloop()
